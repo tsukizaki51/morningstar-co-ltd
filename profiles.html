@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8" />
+<title>Morning Star - アイドルプロフィール</title>
+<style>
+  body {
+    background: #111;
+    color: white;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 40px 0;
+  }
+
+  header {
+    margin-bottom: 40px;
+  }
+
+  header img {
+    height: 80px;
+  }
+
+  h1 {
+    margin-top: 10px;
+    font-weight: 700;
+  }
+
+  .idol-grid {
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+  }
+
+  .idol-card {
+    cursor: pointer;
+    width: 180px;
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: inherit;
+  }
+
+  .idol-card:hover {
+    transform: scale(1.05);
+  }
+
+  .idol-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 15px;
+    object-fit: cover;
+    transition: opacity 0.3s ease;
+  }
+
+  .idol-name {
+    margin-top: 10px;
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: #ffd700; /* золотой */
+  }
+</style>
+</head>
+<body>
+  <header>
+    <img src="images/morning_star_logo.png" alt="Morning Star ロゴ" />
+    <h1>Morning Star - アイドルプロフィール</h1>
+  </header>
+
+  <div class="idol-grid">
+    <a href="profiles/helio.html" class="idol-card" 
+       onmouseover="swapImage(this, 'helio_alt.jpg')" 
+       onmouseout="swapImage(this, 'helio.jpg')">
+      <img src="images/helio.jpg" alt="Helios" class="idol-image" />
+      <div class="idol-name">ヘリオス (Helios)</div>
+    </a>
+
+    <a href="profiles/apollo.html" class="idol-card" 
+       onmouseover="swapImage(this, 'apollo_alt.jpg')" 
+       onmouseout="swapImage(this, 'apollo.jpg')">
+      <img src="images/apollo.jpg" alt="Apollo" class="idol-image" />
+      <div class="idol-name">アポロ (Apollo)</div>
+    </a>
+
+    <a href="profiles/jupiter.html" class="idol-card" 
+       onmouseover="swapImage(this, 'jupiter_alt.jpg')" 
+       onmouseout="swapImage(this, 'jupiter.jpg')">
+      <img src="images/jupiter.jpg" alt="Jupiter" class="idol-image" />
+      <div class="idol-name">ジュピター (Jupiter)</div>
+    </a>
+
+    <a href="profiles/sol.html" class="idol-card" 
+       onmouseover="swapImage(this, 'sol_alt.jpg')" 
+       onmouseout="swapImage(this, 'sol.jpg')">
+      <img src="images/sol.jpg" alt="Sol" class="idol-image" />
+      <div class="idol-name">ソル (Sol)</div>
+    </a>
+  </div>
+
+<script>
+  function swapImage(card, newSrc) {
+    const img = card.querySelector('img.idol-image');
+    if(img) {
+      img.src = 'images/' + newSrc;
+    }
+  }
+</script>
+</body>
+</html>
