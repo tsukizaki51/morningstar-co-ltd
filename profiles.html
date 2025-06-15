@@ -1,109 +1,107 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-<meta charset="UTF-8" />
-<title>Morning Star - アイドルプロフィール</title>
-<style>
-  body {
-    background: #111;
-    color: white;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-align: center;
-    margin: 0;
-    padding: 40px 0;
-  }
+  <meta charset="UTF-8" />
+  <title>Morning Star - アイドルプロダクション</title>
+  <style>
+    body {
+      background: black url('https://i.imgur.com/N9AFt00.jpeg') no-repeat center center;
+      background-size: cover;
+      margin: 0;
+      font-family: Arial, sans-serif;
+      color: white;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-height: 100vh;
+      padding: 40px 20px;
+    }
 
-  header {
-    margin-bottom: 40px;
-  }
+    h1 {
+      margin-bottom: 40px;
+      font-size: 3rem;
+      text-shadow: 0 0 8px gold;
+    }
 
-  header img {
-    height: 80px;
-  }
+    .idol-container {
+      display: flex;
+      gap: 40px;
+      flex-wrap: wrap;
+      justify-content: center;
+      max-width: 1000px;
+      width: 100%;
+    }
 
-  h1 {
-    margin-top: 10px;
-    font-weight: 700;
-  }
+    .idol-card {
+      text-align: center;
+      cursor: pointer;
+      max-width: 180px;
+      color: white;
+      text-decoration: none;
+    }
 
-  .idol-grid {
-    display: flex;
-    justify-content: center;
-    gap: 40px;
-    flex-wrap: wrap;
-  }
+    .idol-card img {
+      width: 180px;
+      height: 180px;
+      border-radius: 20px;
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
+      transition: transform 0.3s ease;
+      object-fit: cover;
+    }
 
-  .idol-card {
-    cursor: pointer;
-    width: 180px;
-    transition: transform 0.3s ease;
-    text-decoration: none;
-    color: inherit;
-  }
+    .idol-card:hover img {
+      transform: scale(1.1);
+      filter: brightness(1.1);
+    }
 
-  .idol-card:hover {
-    transform: scale(1.05);
-  }
-
-  .idol-image {
-    width: 180px;
-    height: 180px;
-    border-radius: 15px;
-    object-fit: cover;
-    transition: opacity 0.3s ease;
-  }
-
-  .idol-name {
-    margin-top: 10px;
-    font-size: 1.2rem;
-    font-weight: 600;
-    color: #ffd700; /* золотой */
-  }
-</style>
+    .idol-name {
+      margin-top: 12px;
+      font-size: 1.3rem;
+      font-weight: bold;
+      text-shadow: 0 0 5px black;
+    }
+  </style>
 </head>
 <body>
-  <header>
-    <img src="images/morning_star_logo.png" alt="Morning Star ロゴ" />
-    <h1>Morning Star - アイドルプロフィール</h1>
-  </header>
+  <h1>Morning Star アイドルプロダクション</h1>
 
-  <div class="idol-grid">
+  <div class="idol-container">
     <a href="profiles/helio.html" class="idol-card" 
-       onmouseover="swapImage(this, 'https://i.imgur.com/jpb33P0.jpeg')" 
-       onmouseout="swapImage(this, 'https://i.imgur.com/cEnYiwp.png')">
-      <img src="images/helio.jpg" alt="Helios" class="idol-image" />
+       onmouseover="swapImage(this, 'https://i.imgur.com/helio_alt.jpg')" 
+       onmouseout="swapImage(this, 'https://i.imgur.com/helio.jpg')">
+      <img src="https://i.imgur.com/helio.jpg" alt="Helios" class="idol-image" />
       <div class="idol-name">ヘリオス (Helios)</div>
     </a>
 
     <a href="profiles/apollo.html" class="idol-card" 
-       onmouseover="swapImage(this, 'apollo_alt.jpg')" 
-       onmouseout="swapImage(this, 'apollo.jpg')">
-      <img src="images/apollo.jpg" alt="Apollo" class="idol-image" />
+       onmouseover="swapImage(this, 'https://i.imgur.com/apollo_alt.jpg')" 
+       onmouseout="swapImage(this, 'https://i.imgur.com/apollo.jpg')">
+      <img src="https://i.imgur.com/apollo.jpg" alt="Apollo" class="idol-image" />
       <div class="idol-name">アポロ (Apollo)</div>
     </a>
 
     <a href="profiles/jupiter.html" class="idol-card" 
-       onmouseover="swapImage(this, 'jupiter_alt.jpg')" 
-       onmouseout="swapImage(this, 'jupiter.jpg')">
-      <img src="images/jupiter.jpg" alt="Jupiter" class="idol-image" />
+       onmouseover="swapImage(this, 'https://i.imgur.com/jupiter_alt.jpg')" 
+       onmouseout="swapImage(this, 'https://i.imgur.com/jupiter.jpg')">
+      <img src="https://i.imgur.com/jupiter.jpg" alt="Jupiter" class="idol-image" />
       <div class="idol-name">ジュピター (Jupiter)</div>
     </a>
 
     <a href="profiles/sol.html" class="idol-card" 
-       onmouseover="swapImage(this, 'sol_alt.jpg')" 
-       onmouseout="swapImage(this, 'sol.jpg')">
-      <img src="images/sol.jpg" alt="Sol" class="idol-image" />
+       onmouseover="swapImage(this, 'https://i.imgur.com/sol_alt.jpg')" 
+       onmouseout="swapImage(this, 'https://i.imgur.com/sol.jpg')">
+      <img src="https://i.imgur.com/sol.jpg" alt="Sol" class="idol-image" />
       <div class="idol-name">ソル (Sol)</div>
     </a>
   </div>
 
-<script>
-  function swapImage(card, newSrc) {
-    const img = card.querySelector('img.idol-image');
-    if(img) {
-      img.src = 'images/' + newSrc;
+  <script>
+    function swapImage(card, newSrc) {
+      const img = card.querySelector('img.idol-image');
+      if (img) {
+        img.src = newSrc;
+      }
     }
-  }
-</script>
+  </script>
 </body>
 </html>
